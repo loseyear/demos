@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 判断数字位数  </title>
+<script>
+window.onload = function ()
+{
+    var oTime = document.getElementsByTagName('time')[0]
+    var aSpan = oTime.getElementsByTagName('span')
+
+    setInterval(getTimes, 1000)
+    getTimes()
+
+    function getTimes()
+    {
+        var oDate = new Date()
+        var aDate = [
+                    oDate.getHours(),
+                    oDate.getMinutes(),
+                    oDate.getSeconds()
+                    ]
+        for ( var i in aDate ) aSpan[i].innerHTML = format( aDate[i] )
+        console.log( aDate[i] )
+    }
+
+    function format(a)
+    {
+        return a.toString().replace(/^(\d)$/, '0$1')
+    }
+
+
+
+}
+</script>
+</head>
+<body>
+    <time>
+        <span></span> H
+        <span></span> M
+        <span></span> S
+    </time>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 简易选项卡 </title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+#outer {
+    width: 450px;
+    margin: 10px auto;
+}
+#tab {
+    background: #000;
+    text-align: center;
+}
+#tab li {
+    display: inline-block;
+    width: 30%;
+    color: #fff;
+    height: 30px;
+    cursor: pointer;
+    line-height: 30px;
+    list-style: none;
+}
+#tab li.current {
+    border-top-width: 0;
+    background: red;
+}
+#content {
+    border: 1px solid #000;
+    border-top-width: 0;
+}
+#content ul {
+    line-height: 25px;
+    display: none;
+    margin:0 30px;
+    padding: 10px 0;
+}
+</style>
+<script>
+window.onload = function()
+{
+    var oLi = document.getElementById('tab').getElementsByTagName('li');
+    var oUl = document.getElementById('content').getElementsByTagName('ul');
+
+    for(var i = 0; i < oLi.length; i++)
+    {
+        oLi[i].index = i;
+        oLi[i].onmouseover = function()
+        {
+            for(var n = 0; n < oLi.length; n++)
+            {
+                oLi[n].className = '';
+            }
+            this.className = 'current';
+            for(var n = 0; n < oUl.length; n++)
+            {
+                oUl[n].style.display = 'none';
+            }
+            oUl[this.index].style.display = 'block'
+        }
+    }
+}   
+</script>
+</head>
+<body>
+    <div id="outer">
+        <ul id="tab">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div id="content">
+            <ul style="display: block;">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+            <ul>
+                <li>2</li>
+                <li>2</li>
+                <li>2</li>
+            </ul>
+            <ul>
+                <li>3</li>
+                <li>3</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 鼠标移入／移除 2 </title>
+<script>
+window.onload = function()
+{
+    var oBtn = document.getElementsByTagName('button')[0];
+    var oItem = document.getElementById('item');
+    var oClose = document.getElementById('close');
+    var style = oItem.style;
+
+    oBtn.onclick = function()
+    {
+        style.display = style.display == 'block' ? 'none' : 'block'
+    }
+    oClose.onclick = function()
+    {
+        style.display = 'none'
+    }
+}
+</script>
+</head>
+<body>
+<div id="outer">
+    <button>enter</button>
+    <ul id="item">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li id="close">close</li>
+    </ul>
+</div>
+</body>
+</html>

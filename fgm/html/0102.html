@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> change link css </title>
+<link rel="stylesheet" href="">
+<script>
+window.onload = function ()
+{
+    var oLink = document.getElementsByTagName('link')[0];
+    var oSkin = document.getElementById('skin').getElementsByTagName('li');
+
+    for( var i = 0; i < oSkin.length; i++)
+    {
+        oSkin[i].onclick = function ()
+        {
+            for( var p in oSkin ) oSkin[p].className = '';
+            this.className = 'current';
+            oLink['href'] = this.id + '.css';
+        }
+    }
+}
+</script>
+</head>
+<body>
+<div id="outer">
+    <ul id="skin">
+        <li id="a">1</li>
+        <li id="b">2</li>
+        <li id="c">3</li>
+    </ul>
+</div>
+</body>
+</html>

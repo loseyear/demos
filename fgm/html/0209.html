@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 单一按钮显示／隐藏 </title>
+<style>
+.open {
+    color: red;
+}
+</style>
+<script>
+window.onload = function()
+{
+    oH1 = document.getElementsByTagName('h1')[0];
+    oUl = document.getElementsByTagName('ul')[0];
+
+    oH1.onclick = function (){
+        var style = oUl.style;
+        style.display = (style.display == 'none' ? 'block' : 'none');
+        console.log(style.display);
+        oH1.className = style.display == 'none' ? 'open' : '';
+    }
+
+}   
+</script>
+</head>
+<body>
+<div id="calendar">
+    <h1>enter</h1>
+    <ul>
+        <li><strong>1</strong>JAN</li>
+        <li><strong>2</strong>FER</li>
+        <li><strong>3</strong>MAR</li>
+        <li><strong>4</strong>APR</li>
+        <li><strong>5</strong>MAY</li>
+        <li><strong class="current">6</strong>JUN</li>
+        <li><strong>7</strong>JUL</li>
+        <li><strong>8</strong>AUG</li>
+        <li><strong>9</strong>SEP</li>
+        <li><strong>10</strong>OCT</li>
+        <li><strong>11</strong>NOV</li>
+        <li><strong>12</strong>DEC</li>
+    </ul>
+</div>
+</body>
+</html>

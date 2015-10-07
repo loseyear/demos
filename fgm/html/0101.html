@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 控制 DIV 属性 </title>
+<style>
+#outer {
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+#div {
+    width: 100px;
+    height: 100px;
+    background: black;
+    margin: 10px auto;
+    display: block;
+}
+</style>
+<script>
+var changeStyle = function (elem, attr, value)
+{
+    elem.style[attr] = value
+};
+window.onload = function ()
+{
+    var oBtn = document.getElementsByTagName('input');
+    var oDiv = document.getElementById('div');
+    var oAtt = ['width', 'height', 'background', 'display', 'display'];
+    var oVal = ['200px', '200px', 'red', 'none', 'block'];
+
+    for ( var i = 0; i < oBtn.length; i++)
+    {
+        oBtn[i].index = i;
+        oBtn[i].onclick = function ()
+        {
+            this.index == oBtn.length - 1 && (oDiv.style.cssText = '');
+            // if(this.index == oBtn.length - 1) { oDiv.style.cssText = ''} 
+            // JS 短路
+            changeStyle(oDiv, oAtt[this.index], oVal[this.index]);
+        }
+    }
+};
+</script>
+</head>
+<body>
+<div id="outer">
+    <div id="div"></div>
+    <input type="button" value="width">
+    <input type="button" value="height">
+    <input type="button" value="color">
+    <input type="button" value="hidden">
+    <input type="button" value="reset">
+</div>
+</body>
+</html>

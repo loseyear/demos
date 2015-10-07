@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 判断数字位数  </title>
+<script>
+window.onload = function ()
+{
+    var aInput = document.getElementsByTagName('input')
+    var i = 0
+
+    aInput[0].onkeyup = function ()
+    {
+        this.value = this.value.replace(/[^\d]/, '')
+    }
+
+    aInput[1].onclick = function ()
+    {
+        ( aInput[0].value == '') ?
+        console.log('NAN') :
+        console.log(/^\d{2}$/.test( parseInt( aInput[0].value )) ? '是两位数' : '是' + aInput[0].value.length + '位数')
+    }
+}
+</script>
+</head>
+<body>
+<input type="text">
+<input type="button" value="enter">
+</body>
+</html>

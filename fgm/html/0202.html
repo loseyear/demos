@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 点击显示内容 </title>
+<script>
+window.onload = function ()
+{
+    var oDiv = document.getElementById('outer').getElementsByTagName('div');
+
+    for(i = 0; i < oDiv.length; i++)
+    {
+        oDiv[i].onclick = function ()
+        {
+            console.log(this.innerHTML)
+        }
+    }
+}
+</script>
+</head>
+<body>
+<div id="outer">
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>
+</div>
+</body>
+</html>

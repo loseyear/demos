@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 鼠标移过改变图片路径 </title>
+<style>
+figure {
+    height: 100px;
+}
+img {
+    height: 100px;
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
+</style>
+<script>
+window.onload = function()
+{
+    var oImg = document.getElementsByTagName('ul')[0].getElementsByTagName('img');
+    var oDiv = document.getElementsByTagName('div')[0];
+    for(var i = 1; i < oImg.length; i++)
+    {
+        oImg[i].onmouseover = function ()
+        {
+            var img = new Image();
+            img.src = oImg[0].src = this.src.replace(/small/, 'big');
+            oDiv.style.display = 'block';
+            img.complete ? oDiv.style.display = 'none' : (oImg[0].onload = function() { oDiv.style.display = 'none'})
+        }
+    }
+}   
+</script>
+</head>
+<body>
+<ul>
+    <li><img src="../img/a.gif" alt=""><div>loading...</div></li>
+    <li><img src="../img/b.gif" alt=""></li>
+    <li><img src="../img/c.gif" alt=""></li>
+    <li><img src="../img/d.gif" alt=""></li>
+    <li><img src="../img/e.gif" alt=""></li>
+    <li><img src="../img/f.gif" alt=""></li>
+    <li><img src="../img/g.gif" alt=""></li>
+    <li><img src="../img/h.gif" alt=""></li>
+    <li><img src="../img/i.gif" alt=""></li>
+</ul>
+</body>
+</html>

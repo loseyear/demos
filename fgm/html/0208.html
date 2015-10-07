@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> 简易日历 </title>
+<style>
+#calendar {
+    width: 500px;
+    margin: 10px auto;
+    background: rgba(0, 0, 0, .1);
+    padding: 10px;
+}
+#calendar li {
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+}
+</style>
+<script>
+window.onload = function()
+{
+    var oLi = document.getElementById('list').getElementsByTagName('li');
+    var oMsg = document.getElementById('msg');
+
+}   
+</script>
+</head>
+<body>
+<div id="calendar">
+    <ul>
+        <li><strong>1</strong>JAN</li>
+        <li><strong>2</strong>FER</li>
+        <li><strong>3</strong>MAR</li>
+        <li><strong>4</strong>APR</li>
+        <li><strong>5</strong>MAY</li>
+        <li><strong class="current">6</strong>JUN</li>
+        <li><strong>7</strong>JUL</li>
+        <li><strong>8</strong>AUG</li>
+        <li><strong>9</strong>SEP</li>
+        <li><strong>10</strong>OCT</li>
+        <li><strong>11</strong>NOV</li>
+        <li><strong>12</strong>DEC</li>
+    </ul>
+    <div id="msg">
+        <h2><strong>6</strong>月节日</h2>
+        <p>端午节：6月4日至6日放假3天。</p>
+    </div>
+</div>
+</body>
+</html>
