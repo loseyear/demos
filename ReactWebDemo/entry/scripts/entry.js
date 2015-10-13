@@ -1,5 +1,5 @@
-var React = require('react')
-var ReactDom = require('react-dom')
+var React = require('react');
+var ReactDom = require('react-dom');
 var HelloMessage = React.createClass({
     render: function() {
         return <div>Hello {this.props.name}</div>;
@@ -7,6 +7,6 @@ var HelloMessage = React.createClass({
 });
 
 ReactDom.render (
-    <HelloMessage name="John" />,
-    document.getElementById("demo")
-);
+     <HelloMessage name="John" />,
+     document.getElementById("demo")
+ );
