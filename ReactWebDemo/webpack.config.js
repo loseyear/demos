@@ -3,11 +3,11 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        entry: './entry/scripts/entry.js'
+        todo: './entry/scripts/todo.js'
     },
     output: {
         path: __dirname,
-        filename: '[name].entry.js'
+        filename: '[name].js'
     },
     resolve: {
         extensions: ['', '.js', '.jsx']

@@ -78,7 +78,6 @@ gulp.task('default',['clean'], function(cb) {
 // Watch
 gulp.task('watch', function() {
     gulp.watch(pathEntry + '/styles/**/*.scss', ['styles']);
-//    gulp.watch(pathEntry + '/scripts/**/*.js', ['scripts']);
     gulp.watch(pathEntry + '/scripts/**/*.js', ['webpack']);
     gulp.watch(pathEntry + '/images/**/*', ['images']);
     gulp.watch(pathEntry + '/*.html', ['html']);

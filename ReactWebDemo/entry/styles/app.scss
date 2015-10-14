@@ -1,3 +1,53 @@
-body {
-    background: red;
+li {
+    list-style: none;
 }
+body,
+ul {
+    margin: 0;
+}
+ul {
+    padding: 0;
+}
+.app {
+    width: 20rem;
+    margin: 1rem auto;
+}
+
+header {
+    width: 100%;
+    input {
+        width: 100%;
+        line-height: 1.5rem;
+        text-indent: .5rem;
+        outline: none
+    }
+}
+
+
+.list li {
+    padding: .5rem 0;
+    line-height: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    span {
+        padding: 0 .5rem;
+        &.done {
+            text-decoration: line-through;
+        }
+    }
+    button {
+        float: right;
+        display: none;
+    }
+}
+
+footer {
+    padding: .5rem 0;
+    line-height: 1.5rem;
+    span {
+        padding: 0 .5rem;
+    }
+    button {
+        float: right;
+    }
+}
+
