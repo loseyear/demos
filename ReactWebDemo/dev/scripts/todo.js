@@ -76,6 +76,7 @@
 	    },
 	    addTodo: function addTodo(todoItem) {
 	        this.state.todos.push(todoItem);
+	        console.log(typeof this.state.todos);
 	        this.setState({ todos: this.state.todos }, function () {
 	            this.db.set('todos', this.state.todos);
 	        });
