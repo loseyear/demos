@@ -10,6 +10,7 @@ define(function(require, exports, module){
             var file = this.files;
             for (var i = 0; i < file.length; i++) {
 
+/*
                 if ( !upload.size(file[i], data) ) {
                     data.error('size not match');
                     return false;
@@ -19,6 +20,7 @@ define(function(require, exports, module){
                     data.error('type not match');
                     return false;
                 };
+*/
 
                 if ( upload.isImg(file[i]) ) {
                     upload.measure(file[i], data);
@@ -122,6 +124,8 @@ define(function(require, exports, module){
             for (x in data.formData) {
                 fileData.append(x, data.formData[x]);
             }
+            console.log(file);
+            console.log(fileData);
 
         $.ajax({
             type: data.methed,

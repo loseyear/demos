@@ -1,10 +1,10 @@
 array (
   'Filedata' => 
   array (
-    'name' => '72_72_5.jpg',
+    'name' => '5.pic.jpg',
     'type' => 'image/jpeg',
-    'tmp_name' => 'C:\\Windows\\Temp\\phpDC35.tmp',
+    'tmp_name' => '/private/var/tmp/php2GRJ59',
     'error' => 0,
-    'size' => 5099,
+    'size' => 135623,
   ),
 )

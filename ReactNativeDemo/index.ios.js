@@ -17,9 +17,6 @@ var ReactNativeDemo = React.createClass({
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-            It works !
-        </Text>
-        <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
