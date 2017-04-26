@@ -14,11 +14,13 @@ var           gulp = require('gulp'),                      // 基础库
 //              haml = require('gulp-ruby-haml'),            // haml 模版
         sourcemaps = require('gulp-sourcemaps'),           // 生成 JS 信息文件
              babel = require('gulp-babel'),                // babel
+               rev = require('gulp-rev'),                  // rev
+      revCollector = require('gulp-rev-collector'),        // rev-collector
                del = require('del');                       // del
 
 var      pathEntry = './entry',
            pathDev = './dev',
-         pathBuild = './build';
+         pathBuild = './rev';
 
 
 // html
@@ -33,21 +35,29 @@ gulp.task('html', function() {
                              minifyJS: true,  //压缩页面JS
                             minifyCSS: true   //压缩页面CSS
     };
-    gulp.src(pathEntry + '/*.html')
+    gulp.src(['./dev/rev/*.json', pathEntry + '/*.html'])
         .pipe(html(options))
+        //.pipe(revCollector())
         .pipe(gulp.dest(pathDev));
 });
-
+//gulp.task('rev', function() {
+//gulp.src(['./rev/*.json', './application/**/header.php'])   //- 读取 rev-manifest.json 文件以及需要进行css名替换的文件
+//    .pipe(revCollector())                                   //- 执行文件内css名的替换
+//    .pipe(gulp.dest('./application/'));                     //- 替换后的文件输出的目录
+//});
 // Styles
 gulp.task('styles', function() {
     gulp.src(pathEntry + '/styles/*.scss')
         .pipe(concat('main.scss'))
         .pipe(sass({ style: 'expanded'}))
-//        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+        //.pipe(rev())
         .pipe(gulp.dest(pathDev + '/styles'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
         .pipe(gulp.dest(pathDev + '/styles'));
+        //.pipe(rev.manifest())
+        //.pipe(gulp.dest(pathDev + '/rev'));
 });
 
 // Scripts
